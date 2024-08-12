@@ -1,0 +1,133 @@
+:root {
+    --scale-factor: 1; /* Default scale factor, adjust this to scale the image */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.header, .footer {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.header h1, .footer p {
+    margin: 0;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header p, .footer p {
+    font-size: 16px;
+}
+
+.iframe-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px 0;
+}
+
+.iframe-container {
+    position: relative;
+    width: calc(1600px * var(--scale-factor)); /* Scale width */
+    height: calc(1000px * var(--scale-factor)); /* Scale height */
+    display: flex;
+    transform: scale(var(--scale-factor));
+    transform-origin: top left;
+}
+
+/* Default iframe positioning */
+.iframe {
+    position: absolute;
+    border: none;
+    pointer-events: none; /* Disable pointer events for background areas */
+}
+
+.iframe-biodiversity {
+    width: 930px;
+    height: 930px;
+    top: 90px;
+    left: 0;
+    z-index: 1;
+    pointer-events: all; /* Enable pointer events for interactive elements */
+}
+
+.iframe-greenspace {
+    width: 700px;
+    height: 700px;
+    top: 20px;
+    left: 605px; /* Adjusted based on Biodiversity position */
+    z-index: 2;
+    pointer-events: all; /* Enable pointer events for interactive elements */
+}
+
+.iframe-yield {
+    width: 600px;
+    height: 600px;
+    top: 95px;
+    left: 1050px; /* Adjusted based on Greenspace position */
+    z-index: 3;
+    pointer-events: all; /* Enable pointer events for interactive elements */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1600px) {
+    :root {
+        --scale-factor: 0.8;
+    }
+}
+
+@media (max-width: 1400px) {
+    :root {
+        --scale-factor: 0.7;
+    }
+}
+
+@media (max-width: 1200px) {
+    :root {
+        --scale-factor: 0.6;
+    }
+}
+
+@media (max-width: 1000px) {
+    :root {
+        --scale-factor: 0.5;
+    }
+}
+
+@media (max-width: 800px) {
+    :root {
+        --scale-factor: 0.4;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --scale-factor: 0.3;
+    }
+}
+
+@media (max-width: 400px) {
+    :root {
+        --scale-factor: 0.25;
+    }
+}
+
+@media (max-width: 300px) {
+    :root {
+        --scale-factor: 0.2;
+    }
+}
